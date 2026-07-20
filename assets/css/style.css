@@ -128,40 +128,16 @@ body::-webkit-scrollbar-thumb {
 .loader-logo {
   height: 80px;
   width: auto;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
-.loader-ellipses{
-  display: flex;
-  width: 100px;
-  justify-content: space-between;
+.loader-text {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  color: var(--text-color);
+  min-width: 100px;
+  text-align: center;
 }
-
-.loader-ellipses span{
-  background-color: var(--secondary-color);
-  height: 20px;
-  width: 20px;
-  border-radius: 50%;
-  opacity: 0;
-  animation: loader-grow 2000ms infinite alternate;
-}
-
-.loader-ellipses span:nth-child(2){
-  animation-delay: 400ms;
-}
-
-.loader-ellipses span:nth-child(3){
-  animation-delay: 800ms;
-}
-
-@keyframes loader-grow {
-  to{
-    transform: scale(1.2);
-    background-color: var(--primary-color);
-    opacity: 100%;
-  }
-}
-
 
 /* Header Start */
 
@@ -623,7 +599,7 @@ header.scrolled {
   display: flex;
   justify-content: center;
   gap: 10px;
-  padding: 16px 12px;
+  padding: 16px 24px;
   background: var(--text-color-white);
   flex-wrap: wrap;
   transition: box-shadow 0.3s ease;
@@ -670,9 +646,9 @@ header.scrolled {
 @media (max-width: 768px) {
   .menu-tabs {
     gap: 6px;
-    padding: 10px 12px;
+    padding: 10px 16px;
   }
-  .menu-tabs.is-sticky { top: 82px; padding: 10px 12px; width: 100vw; left: auto; right: auto; margin-left: 0; }
+  .menu-tabs.is-sticky { top: 82px; padding: 10px 16px; width: 100vw; left: auto; right: auto; margin-left: 0; }
   .menu-tab {
     padding: 8px 12px;
     font-size: 0.76rem;

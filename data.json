@@ -13,7 +13,7 @@
     {
       "id": "corbalar",
       "name": "Çorbalar",
-      "icon": "fa-coffee",
+      "icon": "fa-utensil-spoon",
       "image": "./corba.jpg",
       "items": [
         { "name": "Mercimek Çorbası", "description": "Kırmızı mercimek, havuç ve özel baharatlarla", "price": 45, "featuredLabel": "" },
@@ -65,7 +65,7 @@
     {
       "id": "icecekler",
       "name": "İçecekler",
-      "icon": "fa-glass-martini-alt",
+      "icon": "fa-mug-hot",
       "image": "./tatli.jpg",
       "items": [
         { "name": "Ayran", "description": "Taze yoğurttan geleneksel içecek", "price": 20, "featuredLabel": "" },

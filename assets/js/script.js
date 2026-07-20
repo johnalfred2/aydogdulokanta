@@ -3,7 +3,14 @@ AOS.init({
 });
 document.addEventListener("DOMContentLoaded", function() {
   const loader = document.querySelector('.loader');
-  setTimeout(() => {
+  const loaderText = document.querySelector('.loader-text');
+  let dotCount = 0;
+  const dotInterval = setInterval(function() {
+    dotCount = (dotCount + 1) % 4;
+    loaderText.textContent = 'Yükleniyor' + '.'.repeat(dotCount);
+  }, 400);
+  setTimeout(function() {
+    clearInterval(dotInterval);
     loader.style.opacity = '0';
     loader.style.display = 'none';
   }, 3000);
