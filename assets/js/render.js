@@ -5,30 +5,6 @@
     if (el) el.textContent = text;
   }
 
-  var iconCache = {};
-
-  function inlineIcons() {
-    var els = document.querySelectorAll('[data-icon]');
-    els.forEach(function(el) {
-      var name = el.getAttribute('data-icon');
-      if (!name) return;
-      if (iconCache[name]) {
-        el.innerHTML = iconCache[name];
-        return;
-      }
-      var xhr = new XMLHttpRequest();
-      xhr.open('GET', './assets/icons/' + name + '.svg', true);
-      xhr.onload = function() {
-        if (xhr.status === 200) {
-          iconCache[name] = xhr.responseText;
-          var svgEl = el;
-          svgEl.innerHTML = iconCache[name];
-        }
-      };
-      xhr.send();
-    });
-  }
-
   function renderHero(d) {
     setText(document.querySelector('.badge-years'), d.sinceBadge);
     setText(document.querySelector('.hero-subtitle'), d.tagline);
@@ -37,13 +13,11 @@
     if (ctaMenu) ctaMenu.textContent = d.ctaMenu;
     var ctaPhone = document.querySelector('.btn-hero-phone');
     if (ctaPhone) {
-      var iconSpan = ctaPhone.querySelector('[data-icon]');
+      var iconSvg = ctaPhone.querySelector('.menu-icon');
       ctaPhone.innerHTML = '';
-      if (iconSpan) {
-        var newIcon = document.createElement('span');
-        newIcon.setAttribute('data-icon', 'phone');
-        newIcon.className = 'menu-icon me-2';
-        ctaPhone.appendChild(newIcon);
+      if (iconSvg) {
+        var clone = iconSvg.cloneNode(true);
+        ctaPhone.appendChild(clone);
       }
       ctaPhone.appendChild(document.createTextNode(' ' + d.ctaPhone));
       ctaPhone.href = 'tel:' + d.phone.replace(/[^0-9]/g, '');
@@ -94,13 +68,10 @@
       if (!section) return;
       var titleEl = section.querySelector('.menu-category-title');
       if (titleEl) {
-        var iconEl = titleEl.querySelector('[data-icon]');
+        var iconSvg = titleEl.querySelector('.menu-icon');
         titleEl.textContent = '';
-        if (iconEl) {
-          var newIcon = document.createElement('span');
-          newIcon.setAttribute('data-icon', cat.id);
-          newIcon.className = 'menu-icon';
-          titleEl.appendChild(newIcon);
+        if (iconSvg) {
+          titleEl.appendChild(iconSvg);
         }
         titleEl.appendChild(document.createTextNode(' ' + cat.name));
       }
@@ -151,7 +122,6 @@
       if (data.hours) renderHours(data.hours);
       renderFooter(data);
       if (data.instagram) renderInstagram(data.instagram);
-      inlineIcons();
     })
     .catch(function(err) {
       console.warn('CMS data unavailable, using static fallback.', err);
