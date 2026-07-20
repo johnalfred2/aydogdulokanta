@@ -150,27 +150,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
 
-      var activeOffset = headerHeight + (tabsBar.offsetHeight || 50) + 15;
+      var activeOffset = headerHeight + (tabsBar.offsetHeight || 50) + 25;
       var triggerLine = window.scrollY + activeOffset;
       var activeId = null;
       categories.forEach(function(cat) {
-        var catTop = cat.getBoundingClientRect().top + window.pageYOffset;
-        var catBottom = catTop + cat.offsetHeight;
-        if (catTop <= triggerLine && catBottom > triggerLine) {
-          activeId = cat.id;
-        }
+        if (cat.getBoundingClientRect().top + window.pageYOffset <= triggerLine) activeId = cat.id;
       });
-      if (!activeId && categories.length > 0) {
-        var first = categories[0];
-        var last = categories[categories.length - 1];
-        var firstTop = first.getBoundingClientRect().top + window.pageYOffset;
-        var lastBottom = last.getBoundingClientRect().top + window.pageYOffset + last.offsetHeight;
-        if (window.scrollY <= firstTop) {
-          activeId = first.id;
-        } else if (window.scrollY + window.innerHeight >= lastBottom) {
-          activeId = last.id;
-        }
-      }
       if (activeId) {
         tabs.forEach(function(t) { t.classList.remove('active'); });
         var tab = document.querySelector('.menu-tab[href="#' + activeId + '"]');
