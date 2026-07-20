@@ -662,6 +662,14 @@ header.scrolled {
 .menu-tab:focus:not(:focus-visible) {
   outline: none;
 }
+
+@media (hover: none) {
+  .menu-tab:hover {
+    background: var(--text-color-white);
+    color: var(--text-color);
+    border-color: var(--border-color);
+  }
+}
 .menu-category-title {
   font-family: "Liberation Serif", "Times New Roman", serif;
   font-size: 1.8rem;

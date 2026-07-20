@@ -24,9 +24,11 @@
     }
     var phoneLinks = document.querySelectorAll('a[href*="tel:"]');
     phoneLinks.forEach(function(el) {
-      if (el !== ctaPhone) {
+      if (el !== ctaPhone && el.id !== 'floating-phone') {
         el.href = 'tel:' + d.phone.replace(/[^0-9]/g, '');
         setText(el, d.phone);
+      } else if (el.id === 'floating-phone') {
+        el.href = 'tel:' + d.phone.replace(/[^0-9]/g, '');
       }
     });
     var video = document.querySelector('.banner-video-bg video source');

@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
         var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
         window.scrollTo({ top: top, behavior: 'smooth' });
       }
-      if ('ontouchstart' in window) this.blur();
+      this.blur();
     });
   });
 })();
