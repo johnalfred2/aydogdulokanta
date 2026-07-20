@@ -563,6 +563,11 @@ header.scrolled {
   line-height: 1;
 }
 
+.menu-category-title .menu-icon {
+  width: 22px;
+  height: 22px;
+}
+
 .menu-icon svg {
   width: 100%;
   height: 100%;
