@@ -125,16 +125,10 @@ body::-webkit-scrollbar-thumb {
   z-index: 12;
 }
 
-.loader p {
-  font-family: "Liberation Serif", "Times New Roman", serif;
-  font-size: 60px;
-}
-
-.loader-icone{
-  font-size: 4em;
-  margin-bottom: 4px;
-  color: var(--primary-color);
-  animation: rotate 2000ms infinite;
+.loader-logo {
+  height: 80px;
+  width: auto;
+  margin-bottom: 20px;
 }
 
 .loader-ellipses{
@@ -165,12 +159,6 @@ body::-webkit-scrollbar-thumb {
     transform: scale(1.2);
     background-color: var(--primary-color);
     opacity: 100%;
-  }
-}
-
-@keyframes rotate{
-  to{
-    transform: rotate(360deg);
   }
 }
 
@@ -635,10 +623,12 @@ header.scrolled {
   display: flex;
   justify-content: center;
   gap: 10px;
-  padding: 16px 0;
+  padding: 16px 12px;
   background: var(--text-color-white);
   flex-wrap: wrap;
   transition: box-shadow 0.3s ease;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
 }
 .menu-tabs.is-sticky {
   position: fixed;
@@ -682,7 +672,7 @@ header.scrolled {
     gap: 6px;
     padding: 10px 12px;
   }
-  .menu-tabs.is-sticky { top: 82px; left: auto; right: auto; padding: 10px 12px; }
+  .menu-tabs.is-sticky { top: 82px; padding: 10px 12px; width: 100vw; left: auto; right: auto; margin-left: 0; }
   .menu-tab {
     padding: 8px 12px;
     font-size: 0.76rem;
