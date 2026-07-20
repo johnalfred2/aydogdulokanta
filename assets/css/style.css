@@ -627,14 +627,12 @@ header.scrolled {
   background: var(--text-color-white);
   flex-wrap: wrap;
   transition: box-shadow 0.3s ease;
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
 }
 .menu-tabs.is-sticky {
   position: fixed;
   left: 0;
   right: 0;
-  padding: 16px 0;
+  padding: 16px 24px;
   background: #fff;
   box-shadow: 0 2px 12px rgba(0,0,0,0.08);
   z-index: 8;
@@ -660,6 +658,10 @@ header.scrolled {
   color: var(--text-color-white);
   border-color: var(--primary-color);
 }
+
+.menu-tab:focus:not(:focus-visible) {
+  outline: none;
+}
 .menu-category-title {
   font-family: "Liberation Serif", "Times New Roman", serif;
   font-size: 1.8rem;
@@ -670,9 +672,9 @@ header.scrolled {
 @media (max-width: 768px) {
   .menu-tabs {
     gap: 6px;
-    padding: 10px 16px;
+    padding: 10px 12px;
   }
-  .menu-tabs.is-sticky { top: 82px; padding: 10px 16px; width: 100vw; left: auto; right: auto; margin-left: 0; }
+  .menu-tabs.is-sticky { top: 82px; padding: 10px 12px; }
   .menu-tab {
     padding: 8px 12px;
     font-size: 0.76rem;

@@ -189,12 +189,14 @@ document.addEventListener('DOMContentLoaded', () => {
   tabs.forEach(function(tab) {
     tab.addEventListener('click', function(e) {
       e.preventDefault();
+      updateHeaderHeight();
       var target = document.querySelector(this.getAttribute('href'));
       if (target) {
         var offset = headerHeight + (tabsBar.offsetHeight || 50) + 15;
         var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
         window.scrollTo({ top: top, behavior: 'smooth' });
       }
+      if ('ontouchstart' in window) this.blur();
     });
   });
 })();
