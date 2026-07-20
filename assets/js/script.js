@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
 
-      var activeOffset = headerHeight + (tabsBar.offsetHeight || 50) + 10;
+      var activeOffset = headerHeight + (tabsBar.offsetHeight || 50) + 20;
       var triggerLine = window.scrollY + activeOffset;
       var activeId = null;
       categories.forEach(function(cat) {
