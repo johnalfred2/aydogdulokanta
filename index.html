@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AYDOĞDU LOKANTASI | Geleneksel Esnaf Lokantası</title>
+    <meta name="description" content="AYDOĞDU LOKANTASI - Bostancı Oto Sanayi, Ataşehir'de geleneksel esnaf lokantası. Çorba, ana yemek, döner ve tatlı çeşitleri.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <style>
+      header.scrolled .menus > ul > li::after { background-color: var(--text-color-white); }
+    </style>
+  </head>
+  <body>
+
+    <div class="loader">
+      <i class="fas fa-utensils loader-icone"></i>
+      <p>AYDOĞDU</p>
+      <div class="loader-ellipses"><span></span><span></span><span></span></div>
+    </div>
+
+    <header>
+      <div class="container header my-1 d-none d-lg-flex">
+        <div class="logo">
+          <a href="#anasayfa">
+            <img src="./assets/images/logo.png" alt="AYDOĞDU" style="height:60px;width:auto;">
+          </a>
+        </div>
+        <div class="menus">
+          <ul class="d-flex mb-0">
+            <li class="list-unstyled py-2">
+              <a class="text-decoration-none text-uppercase px-3" href="#anasayfa">Ana Sayfa</a>
+            </li>
+            <li class="list-unstyled py-2">
+              <a class="text-decoration-none text-uppercase px-3" href="#menu">Menü</a>
+            </li>
+            <li class="list-unstyled py-2">
+              <a class="text-decoration-none text-uppercase px-3" href="#iletisim">İletişim & Konum</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="d-lg-none mobile-header-grid py-2">
+        <div id="hamburger" class="mobile-hamburger">
+          <i class="fa fa-2x fa-bars text-white"></i>
+        </div>
+        <div class="mobile-nav-logo">
+          <div class="logo">
+            <a href="#anasayfa">
+              <img src="./assets/images/logo.png" alt="AYDOĞDU" style="height:60px;width:auto;">
+            </a>
+          </div>
+        </div>
+        <div class="mobile-header-spacer"></div>
+      </div>
+      <div class="position-fixed w-75 bg-white h-100 top-0 start-0" id="mobile-menu">
+          <div id="hamburger-cross" class="d-flex justify-content-end align-items-center py-2">
+            <i class="fa fa-2x fa-plus me-3"></i>
+          </div>
+          <div class="menus">
+            <ul class="d-flex flex-column ps-2 mb-0 mt-4">
+              <li class="list-unstyled py-2">
+                <a class="text-dark text-decoration-none text-uppercase p-4" href="#anasayfa">Ana Sayfa</a>
+              </li>
+              <li class="list-unstyled py-2">
+                <a class="text-dark text-decoration-none text-uppercase p-4" href="#menu">Menü</a>
+              </li>
+              <li class="list-unstyled py-2">
+                <a class="text-dark text-decoration-none text-uppercase p-4" href="#iletisim">İletişim & Konum</a>
+              </li>
+            </ul>
+        </div>
+      </div>
+    </header>
+
+    <main class="contact-page">
+      <!-- ===== Ana Sayfa / Hero ===== -->
+      <section id="anasayfa" class="banner py-5">
+        <div class="banner-video-bg">
+          <video autoplay muted loop playsinline>
+            <source src="./assets/video/hero.mp4" type="video/mp4">
+          </video>
+          <div class="banner-overlay"></div>
+        </div>
+        <div class="container py-5" style="position:relative;z-index:2;">
+          <div class="row">
+            <div class="col-lg-7 banner-content" data-aos="fade-right">
+              <span class="badge-years">1990'dan Beri</span>
+              <h1 class="display-2">AYDOĞDU<br>LOKANTASI</h1>
+              <p class="hero-subtitle">Bostancı'nın Geleneksel Lezzet Durağı</p>
+              <p class="hero-desc">
+                1990'dan beri Bostancı Oto Sanayi'de taze günlük malzemelerle hazırladığımız
+                ev yemekleri, döner çeşitleri ve yöresel tatlılarımızla hizmetinizdeyiz.
+              </p>
+              <div class="hero-ctas d-flex gap-3 flex-wrap">
+                <div class="book-a-table">
+                  <div class="anim-layer"></div>
+                  <a href="#menu">Menüyü Keşfet</a>
+                </div>
+                <a href="tel:+905551234567" class="btn-hero-phone">
+                  <i class="fas fa-phone me-2"></i>Bizi Arayın
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Menü ===== -->
+      <section id="menu" class="our-menu pt-5">
+        <div class="container">
+          <div class="row" data-aos="fade-right">
+            <div class="section-title text-center">
+              <h5>Lezzetlerimiz</h5>
+              <h2 class="display-5 fw-bold">Menümüz</h2>
+            </div>
+          </div>
+          <!-- Sticky Category Tabs -->
+          <div class="menu-tabs" data-aos="fade-left">
+            <a href="#corbalar" class="menu-tab active"><i class="fas fa-coffee me-2"></i>Çorbalar</a>
+            <a href="#ana-yemek" class="menu-tab"><i class="fas fa-drumstick-bite me-2"></i>Ana Yemek</a>
+            <a href="#doner" class="menu-tab"><i class="fas fa-utensils me-2"></i>Döner</a>
+            <a href="#tatlilar" class="menu-tab"><i class="fas fa-ice-cream me-2"></i>Tatlılar</a>
+            <a href="#icecekler" class="menu-tab"><i class="fas fa-glass-martini-alt me-2"></i>İçecekler</a>
+          </div>
+
+          <!-- Çorbalar -->
+          <div id="corbalar" class="menu-category">
+            <h3 class="menu-category-title"><i class="fas fa-coffee me-2" style="color:var(--primary-color);"></i>Çorbalar</h3>
+            <div class="row g-3 mb-4">
+              <div class="col-6 col-md-4">
+                <div class="food-placeholder">
+                  <img src="./corba.jpg" alt="Çorbalar">
+                </div>
+              </div>
+            </div>
+            <div class="item-wrapper d-flex justify-content-between">
+              <div class="item-left"><h5>Mercimek Çorbası</h5><p>Kırmızı mercimek, havuç ve özel baharatlarla</p></div>
+              <div class="item-right"><span class="item-price"><span class="price-symbol">₺</span>45</span></div>
+            </div>
+            <div class="item-wrapper d-flex justify-content-between">
+              <div class="item-left"><h5>Ezogelin Çorbası</h5><p>Bulgur, mercimek, pirinç ve nane ile</p></div>
+              <div class="item-right"><span class="item-price"><span class="price-symbol">₺</span>50</span></div>
+            </div>
+            <div class="item-wrapper d-flex justify-content-between">
+              <div class="item-left"><h5>Tarhana Çorbası</h5><p>Ev yapımı tarhana, tereyağ ve nane ile</p></div>
+              <div class="item-right"><span class="item-price"><span class="price-symbol">₺</span>40</span></div>
+            </div>
+            <div class="item-wrapper d-flex justify-content-between">
+              <div class="item-left"><h5>Düğün Çorbası <span class="featured-badge">Özel Lezzet</span></h5><p>Kuzu etli, yumurtalı ve limonlu</p></div>
+              <div class="item-right"><span class="item-price"><span class="price-symbol">₺</span>55</span></div>
+            </div>
+            <div class="item-wrapper d-flex justify-content-between">
+              <div class="item-left"><h5>Yayla Çorbası</h5><p>Yoğurtlu, pirinçli, nane ile</p></div>
+              <div class="item-right"><span class="item-price"><span class="price-symbol">₺</span>45</span></div>
+            </div>
+          </div>
+
+          <!-- Ana Yemek -->
+          <div id="ana-yemek" class="menu-category">
+            <h3 class="menu-category-title"><i class="fas fa-drumstick-bite me-2" style="color:var(--primary-color);"></i>Ana Yemek</h3>
+            <div class="row g-3 mb-4">
+              <div class="col-6 col-md-4">
+                <div class="food-placeholder">
+                  <img src="./ana_yemek.jpg" alt="Ana Yemek">
+                </div>
+              </div>
+            </div>
+            <div class="item-wrapper d-flex justify-content-between">
+              <div class="item-left"><h5>Kuzu Etli Kuru Fasulye <span class="featured-badge">Günün Yemeği</span></h5><p>Kuru fasulye, kuzu eti, tereyağ ile</p></div>
+              <div class="item-right"><span class="item-price"><span class="price-symbol">₺</span>120</span></div>
+            </div>
+            <div class="item-wrapper d-flex justify-content-between">
+              <div class="item-left"><h5>Patlıcan Musakka</h5><p>Kıyma, patlıcan ve sebzelerle fırında</p></div>
+              <div class="item-right"><span class="item-price"><span class="price-symbol">₺</span>110</span></div>
+            </div>
+            <div class="item-wrapper d-flex justify-content-between">
+              <div class="item-left"><h5>Tavuk Şiş</h5><p>Özel marine, şişte mangal tadında</p></div>
+              <div class="item-right"><span class="item-price"><span class="price-symbol">₺</span>130</span></div>
+            </div>
+            <div class="item-wrapper d-flex justify-content-between">
+              <div class="item-left"><h5>İzmir Köfte</h5><p>Fırında köfte, patates ve biber</p></div>
+              <div class="item-right"><span class="item-price"><span class="price-symbol">₺</span>100</span></div>
+            </div>
+            <div class="item-wrapper d-flex justify-content-between">
+              <div class="item-left"><h5>Karnıyarık</h5><p>Kıymalı fırın patlıcan, pilav ile</p></div>
+              <div class="item-right"><span class="item-price"><span class="price-symbol">₺</span>110</span></div>
+            </div>
+          </div>
+
+          <!-- Döner -->
+          <div id="doner" class="menu-category">
+            <h3 class="menu-category-title"><i class="fas fa-utensils me-2" style="color:var(--primary-color);"></i>Döner Çeşitleri</h3>
+            <div class="row g-3 mb-4">
+              <div class="col-6 col-md-4">
+                <div class="food-placeholder">
+                  <img src="./doner.jpg" alt="Döner">
+                </div>
+              </div>
+            </div>
+            <div class="item-wrapper d-flex justify-content-between">
+              <div class="item-left"><h5>Döner Porsiyon</h5><p>Bulgur pilavı, salata ile servis</p></div>
+              <div class="item-right"><span class="item-price"><span class="price-symbol">₺</span>130</span></div>
+            </div>
+            <div class="item-wrapper d-flex justify-content-between">
+              <div class="item-left"><h5>İskender Döner <span class="featured-badge">Şefin Tavsiyesi</span></h5><p>Tereyağlı sos, yoğurt, domates soslu</p></div>
+              <div class="item-right"><span class="item-price"><span class="price-symbol">₺</span>170</span></div>
+            </div>
+            <div class="item-wrapper d-flex justify-content-between">
+              <div class="item-left"><h5>Döner Dürüm</h5><p>Lavaş ekmeğinde, yeşillik ile</p></div>
+              <div class="item-right"><span class="item-price"><span class="price-symbol">₺</span>110</span></div>
+            </div>
+            <div class="item-wrapper d-flex justify-content-between">
+              <div class="item-left"><h5>Karışık Döner Tabak</h5><p>Döner, şiş köfte, tavuk şiş bir arada</p></div>
+              <div class="item-right"><span class="item-price"><span class="price-symbol">₺</span>180</span></div>
+            </div>
+            <div class="item-wrapper d-flex justify-content-between">
+              <div class="item-left"><h5>Döner Ekmek</h5><p>Taze ekmek arası, domates ve turşu ile</p></div>
+              <div class="item-right"><span class="item-price"><span class="price-symbol">₺</span>95</span></div>
+            </div>
+          </div>
+
+          <!-- Tatlılar -->
+          <div id="tatlilar" class="menu-category">
+            <h3 class="menu-category-title"><i class="fas fa-ice-cream me-2" style="color:var(--primary-color);"></i>Tatlılar</h3>
+            <div class="row g-3 mb-4">
+              <div class="col-6 col-md-4">
+                <div class="food-placeholder">
+                  <img src="./tatli.jpg" alt="Tatlılar">
+                </div>
+              </div>
+            </div>
+            <div class="item-wrapper d-flex justify-content-between">
+              <div class="item-left"><h5>Künefe <span class="featured-badge">En Çok Tercih Edilen</span></h5><p>Taze kadayıf, peynir ve şerbet ile</p></div>
+              <div class="item-right"><span class="item-price"><span class="price-symbol">₺</span>90</span></div>
+            </div>
+            <div class="item-wrapper d-flex justify-content-between">
+              <div class="item-left"><h5>Fırın Sütlaç</h5><p>Üzeri kızarmış, geleneksel fırın sütlaç</p></div>
+              <div class="item-right"><span class="item-price"><span class="price-symbol">₺</span>60</span></div>
+            </div>
+            <div class="item-wrapper d-flex justify-content-between">
+              <div class="item-left"><h5>Baklava (Porsiyon)</h5><p>Cevizli, şerbetli geleneksel tatlı</p></div>
+              <div class="item-right"><span class="item-price"><span class="price-symbol">₺</span>80</span></div>
+            </div>
+            <div class="item-wrapper d-flex justify-content-between">
+              <div class="item-left"><h5>İrmik Helvası</h5><p>Tereyağlı, çam fıstıklı, sıcak servis</p></div>
+              <div class="item-right"><span class="item-price"><span class="price-symbol">₺</span>55</span></div>
+            </div>
+            <div class="item-wrapper d-flex justify-content-between">
+              <div class="item-left"><h5>Kazandibi</h5><p>Hafif yanık, sütlü geleneksel tatlı</p></div>
+              <div class="item-right"><span class="item-price"><span class="price-symbol">₺</span>60</span></div>
+            </div>
+          </div>
+
+          <!-- İçecekler -->
+          <div id="icecekler" class="menu-category">
+            <h3 class="menu-category-title"><i class="fas fa-glass-martini-alt me-2" style="color:var(--primary-color);"></i>İçecekler</h3>
+            <div class="row g-3 mb-4">
+              <div class="col-6 col-md-4">
+                <div class="food-placeholder">
+                  <img src="./tatli.jpg" alt="İçecekler">
+                </div>
+              </div>
+            </div>
+            <div class="item-wrapper d-flex justify-content-between">
+              <div class="item-left"><h5>Ayran</h5><p>Taze yoğurttan geleneksel içecek</p></div>
+              <div class="item-right"><span class="item-price"><span class="price-symbol">₺</span>20</span></div>
+            </div>
+            <div class="item-wrapper d-flex justify-content-between">
+              <div class="item-left"><h5>Şalgam Suyu</h5><p>Hafif baharatlı, ferahlatıcı</p></div>
+              <div class="item-right"><span class="item-price"><span class="price-symbol">₺</span>25</span></div>
+            </div>
+            <div class="item-wrapper d-flex justify-content-between">
+              <div class="item-left"><h5>Çay</h5><p>Taze demlenmiş Türk çayı</p></div>
+              <div class="item-right"><span class="item-price"><span class="price-symbol">₺</span>15</span></div>
+            </div>
+            <div class="item-wrapper d-flex justify-content-between">
+              <div class="item-left"><h5>Türk Kahvesi</h5><p>Yanında lokum ile</p></div>
+              <div class="item-right"><span class="item-price"><span class="price-symbol">₺</span>30</span></div>
+            </div>
+            <div class="item-wrapper d-flex justify-content-between">
+              <div class="item-left"><h5>Su</h5><p>İçme suyu 0.5L</p></div>
+              <div class="item-right"><span class="item-price"><span class="price-symbol">₺</span>10</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== İletişim & Konum ===== -->
+      <section id="iletisim" class="contact-us pt-5 mb-0 pb-5">
+        <div class="container">
+          <div class="row align-items-start g-5">
+            <!-- Map LEFT -->
+            <div class="col-lg-7" data-aos="fade-right">
+              <h2 class="display-6 fw-bold mb-4">Konumumuz</h2>
+              <iframe src="https://www.google.com/maps?q=Aydo%C4%9Fdu+2+Lokantas%C4%B1,+%C4%B0stanbul&z=17&output=embed"
+                width="100%" height="400" style="border:0;border-radius:8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <!-- Contact Info RIGHT -->
+            <div class="col-lg-5" data-aos="fade-left">
+              <div class="contact-info">
+                <h2 class="mb-5 mt-5 mt-lg-0 position-relative display-6 fw-bold">İletişim Bilgileri</h2>
+                <div class="d-flex flex-column px-0 justify-content-between">
+                  <div class="contact-info-box d-flex align-items-center pe-2 py-3">
+                    <div class="contact-icon-box">
+                      <i class="fa-solid fa-location-dot border-bottom pb-2"></i>
+                    </div>
+                    <div class="ps-3">
+                      <p class="mb-0">
+                        <b>Adres</b><br>
+                        <a href="https://maps.app.goo.gl/VTeGeL5wVci3rUmo6" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">
+                          Huzur Hoca Caddesi No:76<br>
+                          İçerenköy, Ataşehir / İstanbul 34752
+                        </a>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="contact-info-box d-flex align-items-center pe-2 py-3">
+                    <div class="contact-icon-box">
+                      <i class="fa-solid fa-phone border-bottom pb-2"></i>
+                    </div>
+                    <div class="ps-3">
+                      <p class="mb-0">
+                        <b>Telefon</b><br>
+                        <a href="tel:+905551234567" style="color:inherit;text-decoration:none;">+90 (555) 123 45 67</a>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="contact-info-box d-flex align-items-center pe-2 py-3">
+                    <div class="contact-icon-box">
+                      <i class="fa-solid fa-clock border-bottom pb-2"></i>
+                    </div>
+                    <div class="ps-3">
+                      <p class="mb-0">
+                        <b>Çalışma Saatleri</b><br>
+                        Hafta İçi: 07:00 - 21:00<br>
+                        Cumartesi: 07:00 - 21:00<br>
+                        Pazar: 09:00 - 18:00
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <a href="tel:+905551234567" id="floating-phone" class="d-lg-none" aria-label="Bizi Arayın">
+      <i class="fas fa-phone"></i>
+    </a>
+
+    <a href="#" id="back-to-top"><i class="fa-solid fa-angles-up"></i></a>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="footer-content col-xl-8 px-4">
+            <div class="row">
+              <div class="col-lg-6 px-0">
+                <div class="logo" data-aos="fade-down-right">
+                  <a href="#anasayfa">
+                    <img src="./assets/images/logo.png" alt="AYDOĞDU" style="height:60px;width:auto;">
+                  </a>
+                </div>
+              </div>
+              <div data-aos="fade-down" class="col-lg-6 pt-4 pt-lg-0 d-flex align-items-center justify-content-start justify-content-lg-end">
+                <div class="social-icons d-flex">
+                  <ul class="d-flex mb-0 ps-0">
+                    <li class="mx-2"><a class="text-decoration-none text-white" href="#"><i class="fab fa-facebook"></i></a></li>
+                    <li class="mx-2"><a class="text-decoration-none text-white" href="https://www.instagram.com/aydogdulokantasi"><i class="fab fa-instagram"></i></a></li>
+                    <li class="mx-2"><a class="text-decoration-none text-white" href="#"><i class="fab fa-twitter"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="row pt-5 content-desc" data-aos="fade-right">
+              <p class="px-0">
+                AYDOĞDU LOKANTASI, 1990 yılından bu yana Bostancı Oto Sanayi, Ataşehir'de
+                geleneksel esnaf lokantası olarak hizmet vermektedir. Ev yemekleri, döner çeşitleri,
+                yöresel tatlar ve güler yüzlü servis anlayışımızla sizleri ağırlamaktan mutluluk duyarız.
+              </p>
+            </div>
+            <div class="row" data-aos="fade-right">
+              <div class="d-flex flex-column flex-lg-row px-0 justify-content-between">
+                <div class="location d-flex align-items-center pe-2 py-3">
+                  <i class="fa-solid fa-location-dot text-white fa-2x border-bottom pb-2"></i>
+                  <div class="ps-3">
+                    <p class="mb-0">
+                      Huzur Hoca Caddesi No:76<br>
+                      İçerenköy, Ataşehir / İstanbul
+                    </p>
+                  </div>
+                </div>
+                <div class="location d-flex align-items-center pe-2 py-3">
+                  <i class="fa-solid fa-mobile text-white fa-2x border-bottom pb-2"></i>
+                  <div class="ps-3">
+                      <p class="mb-0">
+                        <a href="tel:+905551234567" style="color:inherit;text-decoration:none;">+90 (555) 123 45 67</a>
+                      </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-4">
+            <div class="reservation-box" data-aos="fade-down-left">
+              <div class="reservation-wrapper">
+                <h2>Çalışma Saatleri</h2>
+                <div class="reservation-date-time">
+                  <p><b>Pazartesi</b> 07:30–17:30</p>
+                  <p><b>Salı</b> 07:30–17:30</p>
+                  <p><b>Çarşamba</b> 07:30–17:30</p>
+                  <p><b>Perşembe</b> 07:30–17:30</p>
+                  <p><b>Cuma</b> 07:30–17:30</p>
+                  <p><b>Cumartesi</b> 07:30–17:30</p>
+                  <p><b>Pazar</b> Kapalı</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <p class="text-center pt-4 mt-3 pt-lg-0">&copy; <span id="copyrightCurrentYear"></span> <b>AYDOĞDU LOKANTASI.</b> Tüm hakları saklıdır.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/render.js"></script>
+  </body>
+</html>

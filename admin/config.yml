@@ -1,0 +1,75 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "site"
+    label: "Site İçeriği"
+    delete: false
+    files:
+      - name: "all"
+        label: "Tüm İçerik"
+        file: "data.json"
+        fields:
+          - label: "Restoran Bilgileri"
+            name: "restaurant"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Restoran Adı", name: "name", widget: "string" }
+              - { label: "Yıl Rozeti (örn: 1990'dan Beri)", name: "sinceBadge", widget: "string" }
+              - { label: "Etiket (Tagline)", name: "tagline", widget: "string" }
+              - { label: "Açıklama", name: "description", widget: "text" }
+              - { label: "Menü Buton Yazısı", name: "ctaMenu", widget: "string" }
+              - { label: "Telefon Buton Yazısı", name: "ctaPhone", widget: "string" }
+              - { label: "Telefon Numarası", name: "phone", widget: "string" }
+              - { label: "Hero Video Yolu", name: "heroVideo", widget: "string" }
+
+          - label: "Menü Kategorileri"
+            name: "categories"
+            widget: "list"
+            collapsed: false
+            fields:
+              - { label: "Kategori ID (değiştirmeyin)", name: "id", widget: "string", hint: "corbalar, ana-yemek, doner, tatlilar, icecekler" }
+              - { label: "Kategori Adı", name: "name", widget: "string" }
+              - { label: "İkon (Font Awesome sınıfı)", name: "icon", widget: "string", hint: "Örn: fa-coffee, fa-drumstick-bite" }
+              - { label: "Kategori Fotoğrafı", name: "image", widget: "image" }
+              - label: "Ürünler"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Ürün Adı", name: "name", widget: "string" }
+                  - { label: "Açıklama", name: "description", widget: "text" }
+                  - { label: "Fiyat (₺)", name: "price", widget: "number", value_type: "int", min: 0 }
+                  - { label: "Özel Etiket (boş bırakılabilir)", name: "featuredLabel", widget: "string", required: false, hint: "Örn: Şefin Tavsiyesi, Günün Yemeği" }
+
+          - label: "Çalışma Saatleri"
+            name: "hours"
+            widget: "list"
+            collapsed: false
+            fields:
+              - { label: "Gün", name: "day", widget: "string" }
+              - { label: "Saat (örn: 07:30–17:30 veya Kapalı)", name: "hours", widget: "string" }
+
+          - label: "İletişim"
+            name: "contact"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Adres", name: "address", widget: "text" }
+              - { label: "Google Maps Linki", name: "mapsUrl", widget: "string" }
+              - { label: "Telefon", name: "phone", widget: "string" }
+
+          - label: "Instagram"
+            name: "instagram"
+            widget: "string"
+
+          - label: "Footer"
+            name: "footer"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Hakkımızda Metni", name: "about", widget: "text" }

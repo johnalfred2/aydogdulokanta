@@ -1,0 +1,100 @@
+{
+  "restaurant": {
+    "name": "AYDOĞDU LOKANTASI",
+    "sinceBadge": "1990'dan Beri",
+    "tagline": "Bostancı'nın Geleneksel Lezzet Durağı",
+    "description": "1990'dan beri Bostancı Oto Sanayi'de taze günlük malzemelerle hazırladığımız ev yemekleri, döner çeşitleri ve yöresel tatlılarımızla hizmetinizdeyiz.",
+    "ctaMenu": "Menüyü Keşfet",
+    "ctaPhone": "Bizi Arayın",
+    "phone": "+90 (555) 123 45 67",
+    "heroVideo": "./assets/video/hero.mp4"
+  },
+  "categories": [
+    {
+      "id": "corbalar",
+      "name": "Çorbalar",
+      "icon": "fa-coffee",
+      "image": "./corba.jpg",
+      "items": [
+        { "name": "Mercimek Çorbası", "description": "Kırmızı mercimek, havuç ve özel baharatlarla", "price": 45, "featuredLabel": "" },
+        { "name": "Ezogelin Çorbası", "description": "Bulgur, mercimek, pirinç ve nane ile", "price": 50, "featuredLabel": "" },
+        { "name": "Tarhana Çorbası", "description": "Ev yapımı tarhana, tereyağ ve nane ile", "price": 40, "featuredLabel": "" },
+        { "name": "Düğün Çorbası", "description": "Kuzu etli, yumurtalı ve limonlu", "price": 55, "featuredLabel": "Özel Lezzet" },
+        { "name": "Yayla Çorbası", "description": "Yoğurtlu, pirinçli, nane ile", "price": 45, "featuredLabel": "" }
+      ]
+    },
+    {
+      "id": "ana-yemek",
+      "name": "Ana Yemek",
+      "icon": "fa-drumstick-bite",
+      "image": "./ana_yemek.jpg",
+      "items": [
+        { "name": "Kuzu Etli Kuru Fasulye", "description": "Kuru fasulye, kuzu eti, tereyağ ile", "price": 120, "featuredLabel": "Günün Yemeği" },
+        { "name": "Patlıcan Musakka", "description": "Kıyma, patlıcan ve sebzelerle fırında", "price": 110, "featuredLabel": "" },
+        { "name": "Tavuk Şiş", "description": "Özel marine, şişte mangal tadında", "price": 130, "featuredLabel": "" },
+        { "name": "İzmir Köfte", "description": "Fırında köfte, patates ve biber", "price": 100, "featuredLabel": "" },
+        { "name": "Karnıyarık", "description": "Kıymalı fırın patlıcan, pilav ile", "price": 110, "featuredLabel": "" }
+      ]
+    },
+    {
+      "id": "doner",
+      "name": "Döner Çeşitleri",
+      "icon": "fa-utensils",
+      "image": "./doner.jpg",
+      "items": [
+        { "name": "Döner Porsiyon", "description": "Bulgur pilavı, salata ile servis", "price": 130, "featuredLabel": "" },
+        { "name": "İskender Döner", "description": "Tereyağlı sos, yoğurt, domates soslu", "price": 170, "featuredLabel": "Şefin Tavsiyesi" },
+        { "name": "Döner Dürüm", "description": "Lavaş ekmeğinde, yeşillik ile", "price": 110, "featuredLabel": "" },
+        { "name": "Karışık Döner Tabak", "description": "Döner, şiş köfte, tavuk şiş bir arada", "price": 180, "featuredLabel": "" },
+        { "name": "Döner Ekmek", "description": "Taze ekmek arası, domates ve turşu ile", "price": 95, "featuredLabel": "" }
+      ]
+    },
+    {
+      "id": "tatlilar",
+      "name": "Tatlılar",
+      "icon": "fa-ice-cream",
+      "image": "./tatli.jpg",
+      "items": [
+        { "name": "Künefe", "description": "Taze kadayıf, peynir ve şerbet ile", "price": 90, "featuredLabel": "En Çok Tercih Edilen" },
+        { "name": "Fırın Sütlaç", "description": "Üzeri kızarmış, geleneksel fırın sütlaç", "price": 60, "featuredLabel": "" },
+        { "name": "Baklava (Porsiyon)", "description": "Cevizli, şerbetli geleneksel tatlı", "price": 80, "featuredLabel": "" },
+        { "name": "İrmik Helvası", "description": "Tereyağlı, çam fıstıklı, sıcak servis", "price": 55, "featuredLabel": "" },
+        { "name": "Kazandibi", "description": "Hafif yanık, sütlü geleneksel tatlı", "price": 60, "featuredLabel": "" }
+      ]
+    },
+    {
+      "id": "icecekler",
+      "name": "İçecekler",
+      "icon": "fa-glass-martini-alt",
+      "image": "./tatli.jpg",
+      "items": [
+        { "name": "Ayran", "description": "Taze yoğurttan geleneksel içecek", "price": 20, "featuredLabel": "" },
+        { "name": "Şalgam Suyu", "description": "Hafif baharatlı, ferahlatıcı", "price": 25, "featuredLabel": "" },
+        { "name": "Çay", "description": "Taze demlenmiş Türk çayı", "price": 15, "featuredLabel": "" },
+        { "name": "Türk Kahvesi", "description": "Yanında lokum ile", "price": 30, "featuredLabel": "" },
+        { "name": "Su", "description": "İçme suyu 0.5L", "price": 10, "featuredLabel": "" }
+      ]
+    }
+  ],
+  "contact": {
+    "address": "Huzur Hoca Caddesi No:76, İçerenköy, Ataşehir / İstanbul 34752",
+    "mapsUrl": "https://maps.app.goo.gl/VTeGeL5wVci3rUmo6",
+    "phone": "+90 (555) 123 45 67",
+    "instagram": "https://www.instagram.com/aydogdulokantasi",
+    "facebook": "",
+    "twitter": ""
+  },
+  "hours": [
+    { "day": "Pazartesi", "hours": "07:30–17:30" },
+    { "day": "Salı", "hours": "07:30–17:30" },
+    { "day": "Çarşamba", "hours": "07:30–17:30" },
+    { "day": "Perşembe", "hours": "07:30–17:30" },
+    { "day": "Cuma", "hours": "07:30–17:30" },
+    { "day": "Cumartesi", "hours": "07:30–17:30" },
+    { "day": "Pazar", "hours": "Kapalı" }
+  ],
+  "footer": {
+    "about": "AYDOĞDU LOKANTASI, 1990 yılından bu yana Bostancı Oto Sanayi, Ataşehir'de geleneksel esnaf lokantası olarak hizmet vermektedir. Ev yemekleri, döner çeşitleri, yöresel tatlar ve güler yüzlü servis anlayışımızla sizleri ağırlamaktan mutluluk duyarız."
+  },
+  "instagram": "https://www.instagram.com/aydogdulokantasi"
+}
