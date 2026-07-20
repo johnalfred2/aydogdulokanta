@@ -627,13 +627,17 @@ header.scrolled {
   background: var(--text-color-white);
   flex-wrap: wrap;
   transition: box-shadow 0.3s ease;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100vw;
-  margin-left: calc(-50vw + 50%);
 }
 .menu-tabs.is-sticky {
   position: fixed;
+  top: auto;
   left: 0;
   right: 0;
+  transform: none;
   padding: 16px 24px;
   background: #fff;
   box-shadow: 0 2px 12px rgba(0,0,0,0.08);
@@ -676,7 +680,7 @@ header.scrolled {
     gap: 6px;
     padding: 10px 12px;
   }
-  .menu-tabs.is-sticky { top: 82px; padding: 10px 12px; margin-left: 0; }
+  .menu-tabs.is-sticky { top: 82px; padding: 10px 12px; transform: none; left: 0; right: 0; width: auto; }
   .menu-tab {
     padding: 8px 12px;
     font-size: 0.76rem;
