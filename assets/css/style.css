@@ -627,6 +627,8 @@ header.scrolled {
   background: var(--text-color-white);
   flex-wrap: wrap;
   transition: box-shadow 0.3s ease;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
 }
 .menu-tabs.is-sticky {
   position: fixed;
@@ -662,14 +664,6 @@ header.scrolled {
 .menu-tab:focus:not(:focus-visible) {
   outline: none;
 }
-
-@media (hover: none) {
-  .menu-tab:hover {
-    background: var(--text-color-white);
-    color: var(--text-color);
-    border-color: var(--border-color);
-  }
-}
 .menu-category-title {
   font-family: "Liberation Serif", "Times New Roman", serif;
   font-size: 1.8rem;
@@ -682,7 +676,7 @@ header.scrolled {
     gap: 6px;
     padding: 10px 12px;
   }
-  .menu-tabs.is-sticky { top: 82px; padding: 10px 12px; }
+  .menu-tabs.is-sticky { top: 82px; padding: 10px 12px; margin-left: 0; }
   .menu-tab {
     padding: 8px 12px;
     font-size: 0.76rem;

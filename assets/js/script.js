@@ -189,6 +189,8 @@ document.addEventListener('DOMContentLoaded', () => {
   tabs.forEach(function(tab) {
     tab.addEventListener('click', function(e) {
       e.preventDefault();
+      tabs.forEach(function(t) { t.classList.remove('active'); });
+      this.classList.add('active');
       updateHeaderHeight();
       var target = document.querySelector(this.getAttribute('href'));
       if (target) {
@@ -196,7 +198,6 @@ document.addEventListener('DOMContentLoaded', () => {
         var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
         window.scrollTo({ top: top, behavior: 'smooth' });
       }
-      this.blur();
     });
   });
 })();
