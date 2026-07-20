@@ -161,6 +161,9 @@ document.addEventListener('DOMContentLoaded', () => {
         var tab = document.querySelector('.menu-tab[href="#' + activeId + '"]');
         if (tab) tab.classList.add('active');
       }
+      if (document.activeElement && document.activeElement.classList.contains('menu-tab')) {
+        document.activeElement.blur();
+      }
       ticking = false;
     });
   });

@@ -660,8 +660,17 @@ header.scrolled {
   border-color: var(--primary-color);
 }
 
-.menu-tab:focus:not(:focus-visible) {
+.menu-tab:focus {
   outline: none;
+  background: var(--text-color-white);
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+.menu-tab:focus.active {
+  background: var(--primary-color);
+  color: var(--text-color-white);
+  border-color: var(--primary-color);
 }
 .menu-category-title {
   font-family: "Liberation Serif", "Times New Roman", serif;
