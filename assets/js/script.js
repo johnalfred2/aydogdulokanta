@@ -156,8 +156,8 @@ document.addEventListener('DOMContentLoaded', () => {
       categories.forEach(function(cat) {
         if (cat.getBoundingClientRect().top + window.pageYOffset <= triggerLine) activeId = cat.id;
       });
+      tabs.forEach(function(t) { t.classList.remove('active'); });
       if (activeId) {
-        tabs.forEach(function(t) { t.classList.remove('active'); });
         var tab = document.querySelector('.menu-tab[href="#' + activeId + '"]');
         if (tab) tab.classList.add('active');
       }
