@@ -151,7 +151,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
 
-      var triggerLine = window.scrollY + 145;
+      var activeOffset = headerHeight + (tabsBar.offsetHeight || 50) + 10;
+      var triggerLine = window.scrollY + activeOffset;
       var activeId = null;
       categories.forEach(function(cat) {
         if (cat.getBoundingClientRect().top + window.pageYOffset <= triggerLine) activeId = cat.id;
@@ -190,7 +191,8 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       var target = document.querySelector(this.getAttribute('href'));
       if (target) {
-        var top = target.getBoundingClientRect().top + window.pageYOffset - 150;
+        var offset = headerHeight + (tabsBar.offsetHeight || 50) + 15;
+        var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
         window.scrollTo({ top: top, behavior: 'smooth' });
       }
     });
