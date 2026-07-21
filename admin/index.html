@@ -24,24 +24,13 @@
 
       var origFetch = window.fetch;
       window.fetch = function(url, opts) {
-        // Intercept OAuth token exchange — return our PAT instead
+        // Intercept OAuth token exchange — return PAT directly
         if (typeof url === 'string' && url.indexOf('github.com/login/oauth/access_token') !== -1) {
-          return origFetch(url, {
-            method: 'POST',
-            headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              access_token: token,
-              token_type: 'bearer',
-              scope: 'repo,user'
-            })
-          }).catch(function() {
-            // If the real endpoint fails (CORS), fake a successful response
-            return new Response(JSON.stringify({
-              access_token: token,
-              token_type: 'bearer',
-              scope: 'repo,user'
-            }), { status: 200, headers: { 'Content-Type': 'application/json' } });
-          });
+          return Promise.resolve(new Response(JSON.stringify({
+            access_token: token,
+            token_type: 'bearer',
+            scope: 'repo,user'
+          }), { status: 200, headers: { 'Content-Type': 'application/json' } }));
         }
         // Add token to all GitHub API calls
         if (typeof url === 'string' && url.indexOf('api.github.com') !== -1) {
