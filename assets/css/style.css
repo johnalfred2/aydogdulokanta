@@ -92,6 +92,11 @@ button,
   color: var(--primary-color);
 }
 
+.logo img {
+  height: clamp(36px, 7vw, 60px);
+  width: auto;
+}
+
 /* Scrollbar Styles */
 body::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
