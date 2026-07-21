@@ -150,7 +150,7 @@
     });
   }
 
-  fetch('./data.json', { cache: 'no-cache' })
+  fetch('./data.json?t=' + Date.now(), { cache: 'no-store' })
     .then(function(r) { return r.json(); })
     .then(function(data) {
       if (data.restaurant) renderHero(data.restaurant);
