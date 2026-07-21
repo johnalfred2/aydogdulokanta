@@ -23,6 +23,7 @@ sup { font-size: 0.55em; vertical-align: super; line-height: 0; }
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 90px;
+  overflow-x: hidden;
 }
 
 body {
