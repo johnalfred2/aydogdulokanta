@@ -281,7 +281,6 @@ header .container {
   background: linear-gradient(160deg, #5C0E0E 0%, #8B1A1A 50%, #6B1010 100%);
   width: 100%;
   position: relative;
-  min-height: 80vh;
   overflow: hidden;
 }
 
@@ -360,7 +359,6 @@ header .container {
 @media (max-width: 767.98px) {
   .banner {
     padding: 0 !important;
-  min-height: 80vh;
   }
   .banner > .container {
     padding-top: 6rem !important;
