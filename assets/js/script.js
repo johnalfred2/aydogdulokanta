@@ -92,68 +92,28 @@ document.addEventListener('DOMContentLoaded', () => {
   var menuSection = document.getElementById('menu');
   if (!tabsBar || !tabs.length || !categories.length || !menuSection) return;
 
-  var spacer = null;
-  var isSticky = false;
   var ticking = false;
-  var naturalAbsTop = 0;
   var headerHeight = 66;
   var justClicked = false;
-  var justUnstuck = false;
 
   function updateHeaderHeight() {
     var h = document.querySelector('header');
     if (h) headerHeight = h.getBoundingClientRect().bottom;
   }
-
-  function createSpacer() {
-    spacer = document.createElement('div');
-    spacer.className = 'menu-spacer';
-    tabsBar.parentNode.insertBefore(spacer, tabsBar);
-  }
-
-  function setSticky(on) {
-    if (on && !isSticky) {
-      if (!spacer) createSpacer();
-      var barHeight = tabsBar.offsetHeight;
-      spacer.style.height = barHeight + 'px';
-      tabsBar.style.minHeight = barHeight + 'px';
-      updateHeaderHeight();
-      tabsBar.style.top = headerHeight + 'px';
-      var rect = tabsBar.getBoundingClientRect();
-      naturalAbsTop = rect.top + window.pageYOffset;
-      isSticky = true;
-      tabsBar.classList.add('is-sticky');
-    } else if (!on && isSticky) {
-      isSticky = false;
-      tabsBar.classList.remove('is-sticky');
-      tabsBar.style.minHeight = '';
-      if (spacer) spacer.style.height = '0';
-      justUnstuck = true;
-      setTimeout(function() { justUnstuck = false; }, 200);
-    }
-  }
-
-  function getMenuBottom() {
-    return menuSection.offsetTop + menuSection.offsetHeight;
-  }
-
-  createSpacer();
-  spacer.style.height = '0';
+  updateHeaderHeight();
+  tabsBar.style.top = headerHeight + 'px';
 
   window.addEventListener('scroll', function() {
     if (ticking) return;
     ticking = true;
     requestAnimationFrame(function() {
-      var menuBottom = getMenuBottom();
+      updateHeaderHeight();
+      tabsBar.style.top = headerHeight + 'px';
 
-      if (!isSticky) {
-        if (!justUnstuck && tabsBar.getBoundingClientRect().top <= headerHeight && window.scrollY > 200 && window.scrollY < menuBottom - 300) {
-          setSticky(true);
-        }
+      if (tabsBar.getBoundingClientRect().top <= headerHeight + 1) {
+        tabsBar.classList.add('is-sticky');
       } else {
-        if (window.scrollY >= menuBottom - 260 || window.scrollY + 84 < naturalAbsTop - 50) {
-          setSticky(false);
-        }
+        tabsBar.classList.remove('is-sticky');
       }
 
       var activeOffset = headerHeight + (tabsBar.offsetHeight || 50) + 25;
@@ -178,9 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('resize', function() {
     updateHeaderHeight();
-    if (isSticky) {
-      tabsBar.style.top = headerHeight + 'px';
-    }
+    tabsBar.style.top = headerHeight + 'px';
   });
 
   // Smooth scroll on click

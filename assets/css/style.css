@@ -23,7 +23,6 @@ sup { font-size: 0.55em; vertical-align: super; line-height: 0; }
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 90px;
-  overflow-x: hidden;
 }
 
 body {
@@ -31,7 +30,6 @@ body {
   font-weight: 400;
   background-color: var(--text-color-white);
   color: var(--text-color);
-  overflow-x: hidden;
 }
 
 
@@ -601,6 +599,7 @@ header.scrolled {
 
 /* Sticky Menu Tabs */
 .menu-tabs {
+  position: sticky;
   z-index: 8;
   display: flex;
   justify-content: center;
@@ -611,11 +610,6 @@ header.scrolled {
   transition: box-shadow 0.3s ease;
 }
 .menu-tabs.is-sticky {
-  position: fixed;
-  left: 0;
-  right: 0;
-  padding: 16px 24px;
-  background: #fff;
   box-shadow: 0 2px 12px rgba(0,0,0,0.08);
 }
 .menu-tab {
@@ -673,9 +667,6 @@ header.scrolled {
 @media (max-width: 768px) {
   .menu-tabs {
     gap: 6px;
-    padding: 10px 12px;
-  }
-  .menu-tabs.is-sticky {
     padding: 10px 12px;
   }
   .menu-tab {
