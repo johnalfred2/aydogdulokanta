@@ -25,6 +25,8 @@ collections:
               - { label: "Menü Butonu", name: "ctaMenu", widget: "string" }
               - { label: "Telefon Butonu", name: "ctaPhone", widget: "string" }
               - { label: "Telefon", name: "phone", widget: "string" }
+              - { label: "Video (Masaüstü)", name: "heroVideoDesktop", widget: "string", required: false }
+              - { label: "Video (Mobil)", name: "heroVideoMobile", widget: "string", required: false }
 
           - label: "Menü Kategorileri"
             name: "categories"

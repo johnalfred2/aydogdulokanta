@@ -6,6 +6,10 @@
   }
 
   function renderHero(d) {
+    var h1 = document.querySelector('.banner-content h1');
+    if (h1 && d.name) {
+      h1.textContent = d.name;
+    }
     setText(document.querySelector('.badge-years'), d.sinceBadge);
     setText(document.querySelector('.hero-subtitle'), d.tagline);
     setText(document.querySelector('.hero-desc'), d.description);
@@ -31,8 +35,11 @@
         el.href = 'tel:' + d.phone.replace(/[^0-9]/g, '');
       }
     });
-    var video = document.querySelector('.banner-video-bg video source');
-    if (video && d.heroVideo) video.src = d.heroVideo;
+
+    var desktopSrc = document.querySelector('.hero-video-desktop source');
+    if (desktopSrc && d.heroVideoDesktop) desktopSrc.src = d.heroVideoDesktop;
+    var mobileSrc = document.querySelector('.hero-video-mobile source');
+    if (mobileSrc && d.heroVideoMobile) mobileSrc.src = d.heroVideoMobile;
   }
 
   function renderHours(hours) {
@@ -66,6 +73,14 @@
   function renderCategories(categories) {
     if (!categories) return;
     categories.forEach(function(cat) {
+      var tab = document.querySelector('.menu-tab[href="#' + cat.id + '"]');
+      if (tab) {
+        var tabIcon = tab.querySelector('.menu-icon');
+        tab.textContent = '';
+        if (tabIcon) tab.appendChild(tabIcon);
+        tab.appendChild(document.createTextNode(' ' + cat.name));
+      }
+
       var section = document.getElementById(cat.id);
       if (!section) return;
       var titleEl = section.querySelector('.menu-category-title');
@@ -92,7 +107,6 @@
         var desc = wrapper.querySelector('.item-left p');
         var priceEl = wrapper.querySelector('.item-price');
         if (h5) {
-          var badge = h5.querySelector('.featured-badge');
           h5.textContent = item.name;
           if (item.featuredLabel) {
             var span = document.createElement('span');
