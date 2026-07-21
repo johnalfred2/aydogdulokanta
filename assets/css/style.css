@@ -804,10 +804,6 @@ footer p {
   .reservation-date-time {
     text-align: center;
   }
-
-  footer, main {
-    overflow-x: hidden;
-  }
 }
 
 .template-credit {
