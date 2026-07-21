@@ -30,10 +30,7 @@ body {
   font-weight: 400;
   background-color: var(--text-color-white);
   color: var(--text-color);
-}
-
-.site-wrapper {
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 
