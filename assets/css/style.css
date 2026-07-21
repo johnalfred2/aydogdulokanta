@@ -270,7 +270,9 @@ header.scrolled {
 .banner {
   background: linear-gradient(160deg, #5C0E0E 0%, #8B1A1A 50%, #6B1010 100%);
   width: 100%;
-  height: auto;
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
 }
 
 .banner-video-bg {
@@ -372,9 +374,6 @@ header.scrolled {
 
 @media (max-width: 767.98px) {
   .banner {
-    position: relative;
-    overflow: hidden;
-    height: 100vh;
     padding: 0 !important;
   }
   .banner > .container {
