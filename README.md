@@ -39,7 +39,6 @@ aydogdulokanta/
 │   ├── icons/                # Lucide SVG icons for categories
 │   └── images/               # Logo (cropped version)
 ├── ana_yemek.jpg             # Food photo (used as placeholder)
-├── logo.png                  # Site logo
 └── admin/config.yml          # Sveltia CMS configuration
 ```
 
