@@ -92,6 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
   var ticking = false;
   var naturalAbsTop = 0;
   var headerHeight = 66; // dynamic, updated on stick/resize
+  var justClicked = false;
 
   function updateHeaderHeight() {
     var h = document.querySelector('header');
@@ -156,10 +157,14 @@ document.addEventListener('DOMContentLoaded', () => {
       categories.forEach(function(cat) {
         if (cat.getBoundingClientRect().top + window.pageYOffset <= triggerLine) activeId = cat.id;
       });
-      tabs.forEach(function(t) { t.classList.remove('active'); });
+      if (!justClicked) {
+        tabs.forEach(function(t) { t.classList.remove('active'); });
+      }
       if (activeId) {
+        tabs.forEach(function(t) { t.classList.remove('active'); });
         var tab = document.querySelector('.menu-tab[href="#' + activeId + '"]');
         if (tab) tab.classList.add('active');
+        justClicked = false;
       }
       if (document.activeElement && document.activeElement.classList.contains('menu-tab')) {
         document.activeElement.blur();
@@ -191,6 +196,8 @@ document.addEventListener('DOMContentLoaded', () => {
   tabs.forEach(function(tab) {
     tab.addEventListener('click', function(e) {
       e.preventDefault();
+      justClicked = true;
+      setTimeout(function() { justClicked = false; }, 1500);
       tabs.forEach(function(t) { t.classList.remove('active'); });
       this.classList.add('active');
       updateHeaderHeight();
