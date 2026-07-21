@@ -39,6 +39,11 @@ function closeMenu() {
 // Close the mobile menu when the close icon is clicked
 getHamburgerCrossIcon.addEventListener("click", closeMenu);
 
+// Close the mobile menu when a link inside it is clicked
+getMobileMenu.querySelectorAll("a").forEach(function(link) {
+  link.addEventListener("click", closeMenu);
+});
+
 // Close the mobile menu if clicking outside of it
 document.addEventListener("click", function(event) {
     var isClickInsideMenu = getMobileMenu.contains(event.target);
