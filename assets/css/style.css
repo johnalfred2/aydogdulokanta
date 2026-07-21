@@ -30,7 +30,6 @@ body {
   font-weight: 400;
   background-color: var(--text-color-white);
   color: var(--text-color);
-  overflow-x: hidden;
 }
 
 
