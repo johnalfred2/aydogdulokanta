@@ -6,6 +6,58 @@
   <title>CMS - AYDOĞDU LOKANTASI</title>
 </head>
 <body>
+  <script>
+    (function() {
+      var STORAGE_KEY = 'aydogdu-cms-token';
+      var token = localStorage.getItem(STORAGE_KEY);
+
+      if (!token) {
+        var t = prompt('GitHub Personal Access Token\u0131n\u0131z\u0131 girin (bir kereye mahsus):');
+        if (t && t.trim()) {
+          localStorage.setItem(STORAGE_KEY, t.trim());
+          window.location.reload();
+        } else {
+          document.body.innerHTML = '<div style="max-width:400px;margin:120px auto;text-align:center;font-family:sans-serif;padding:30px;"><h2>Token gerekli</h2><p>Sayfay\u0131 yenileyip GitHub Personal Access Token\u0131n\u0131z\u0131 girin.</p></div>';
+        }
+        return;
+      }
+
+      var origFetch = window.fetch;
+      window.fetch = function(url, opts) {
+        // Intercept OAuth token exchange — return our PAT instead
+        if (typeof url === 'string' && url.indexOf('github.com/login/oauth/access_token') !== -1) {
+          return origFetch(url, {
+            method: 'POST',
+            headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              access_token: token,
+              token_type: 'bearer',
+              scope: 'repo,user'
+            })
+          }).catch(function() {
+            // If the real endpoint fails (CORS), fake a successful response
+            return new Response(JSON.stringify({
+              access_token: token,
+              token_type: 'bearer',
+              scope: 'repo,user'
+            }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+          });
+        }
+        // Add token to all GitHub API calls
+        if (typeof url === 'string' && url.indexOf('api.github.com') !== -1) {
+          opts = opts || {};
+          var h = opts.headers || {};
+          if (h instanceof Headers) {
+            h.set('Authorization', 'Bearer ' + token);
+          } else {
+            h['Authorization'] = 'Bearer ' + token;
+          }
+          opts.headers = h;
+        }
+        return origFetch.call(this, url, opts);
+      };
+    })();
+  </script>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </body>
 </html>
