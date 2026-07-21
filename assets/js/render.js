@@ -20,27 +20,13 @@
     setText(document.querySelector('.hero-desc'), d.description);
     var ctaMenu = document.querySelector('.book-a-table a');
     if (ctaMenu) ctaMenu.textContent = d.ctaMenu;
-    var ctaPhone = document.querySelector('.btn-hero-phone');
-    if (ctaPhone) {
-      var iconSvg = ctaPhone.querySelector('.menu-icon');
-      ctaPhone.innerHTML = '';
-      if (iconSvg) {
-        var clone = iconSvg.cloneNode(true);
-        ctaPhone.appendChild(clone);
-      }
-      ctaPhone.appendChild(document.createTextNode(' ' + d.ctaPhone));
-      ctaPhone.href = 'tel:' + d.phone.replace(/[^0-9]/g, '');
-    }
     var phoneLinks = document.querySelectorAll('a[href*="tel:"]');
     phoneLinks.forEach(function(el) {
-      if (el !== ctaPhone && el.id !== 'floating-phone') {
-        el.href = 'tel:' + d.phone.replace(/[^0-9]/g, '');
+      el.href = 'tel:' + d.phone.replace(/[^0-9]/g, '');
+      if (el.id !== 'floating-phone') {
         setText(el, d.phone);
-      } else if (el.id === 'floating-phone') {
-        el.href = 'tel:' + d.phone.replace(/[^0-9]/g, '');
       }
     });
-
     var desktopSrc = document.querySelector('.hero-video-desktop source');
     if (desktopSrc && d.heroVideoDesktop) desktopSrc.src = d.heroVideoDesktop;
     var mobileSrc = document.querySelector('.hero-video-mobile source');
@@ -48,17 +34,29 @@
   }
 
   function renderHours(hours) {
+    if (!hours) return;
+
     var container = document.querySelector('.reservation-date-time');
-    if (!container || !hours) return;
-    container.innerHTML = '';
-    hours.forEach(function(h) {
-      var p = document.createElement('p');
-      var b = document.createElement('b');
-      b.textContent = h.day;
-      p.appendChild(b);
-      p.appendChild(document.createTextNode(' ' + h.hours));
-      container.appendChild(p);
-    });
+    if (container) {
+      container.innerHTML = '';
+      hours.forEach(function(h) {
+        var p = document.createElement('p');
+        var b = document.createElement('b');
+        b.textContent = h.day;
+        p.appendChild(b);
+        p.appendChild(document.createTextNode(' ' + h.hours));
+        container.appendChild(p);
+      });
+    }
+
+    var contactHours = document.querySelector('.contact-hours-list');
+    if (contactHours) {
+      contactHours.innerHTML = '';
+      hours.forEach(function(h) {
+        contactHours.appendChild(document.createTextNode(h.day + ': ' + h.hours));
+        contactHours.appendChild(document.createElement('br'));
+      });
+    }
   }
 
   function renderContact(c) {
@@ -68,6 +66,16 @@
       addressEl.href = c.mapsUrl || '#';
       setText(addressEl, c.address);
     }
+
+    var socialLinks = {
+      facebook: c.facebook || '#',
+      instagram: c.instagram || '#',
+      twitter: c.twitter || '#'
+    };
+    Object.keys(socialLinks).forEach(function(key) {
+      var link = document.querySelector('.social-icons a[data-social="' + key + '"]');
+      if (link) link.href = socialLinks[key];
+    });
   }
 
   function renderFooter(d) {
@@ -127,13 +135,6 @@
     });
   }
 
-  function renderInstagram(instagramUrl) {
-    var instagramLink = document.querySelector('.social-icons a[href*="instagram"]');
-    if (instagramLink && instagramUrl) {
-      instagramLink.href = instagramUrl;
-    }
-  }
-
   fetch('./data.json', { cache: 'no-cache' })
     .then(function(r) { return r.json(); })
     .then(function(data) {
@@ -142,7 +143,6 @@
       if (data.contact) renderContact(data.contact);
       if (data.hours) renderHours(data.hours);
       renderFooter(data);
-      if (data.instagram) renderInstagram(data.instagram);
     })
     .catch(function(err) {
       console.warn('CMS data unavailable, using static fallback.', err);

@@ -634,13 +634,6 @@ header.scrolled {
   border: 1px solid var(--border-color);
   transition: all 0.25s ease;
 }
-.menu-tab:hover,
-.menu-tab.active {
-  background: var(--primary-color);
-  color: var(--text-color-white);
-  border-color: var(--primary-color);
-}
-
 .menu-tab:focus {
   outline: none;
   background: var(--text-color-white);
@@ -648,7 +641,8 @@ header.scrolled {
   border-color: var(--border-color);
 }
 
-.menu-tab:focus.active {
+.menu-tab:hover,
+.menu-tab.active {
   background: var(--primary-color);
   color: var(--text-color-white);
   border-color: var(--primary-color);

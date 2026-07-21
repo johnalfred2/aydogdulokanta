@@ -5,7 +5,6 @@
     "tagline": "Bostancı'nın Geleneksel Lezzet Durağı",
     "description": "1990'dan beri Bostancı Oto Sanayi'de taze günlük malzemelerle hazırladığımız ev yemekleri, döner çeşitleri ve yöresel tatlılarımızla hizmetinizdeyiz.",
     "ctaMenu": "Menüyü Keşfet",
-    "ctaPhone": "Bizi Arayın",
     "phone": "+90 (555) 123 45 67",
     "heroVideoDesktop": "./assets/video/hero.mp4",
     "heroVideoMobile": "./assets/video/hero.mp4"
@@ -240,7 +239,6 @@
     "facebook": "",
     "instagram": "https://www.instagram.com/aydogdulokantasi"
   },
-  "instagram": "https://www.instagram.com/aydogdulokantasi",
   "footer": {
     "about": "AYDOĞDU LOKANTASI, 1990 yılından bu yana Bostancı Oto Sanayi, Ataşehir'de geleneksel esnaf lokantası olarak hizmet vermektedir. Ev yemekleri, döner çeşitleri, yöresel tatlar ve güler yüzlü servis anlayışımızla sizleri ağırlamaktan mutluluk duyarız."
   }
