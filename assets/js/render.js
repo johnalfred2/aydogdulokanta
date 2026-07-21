@@ -117,7 +117,7 @@
           }
         }
         if (desc) setText(desc, item.description);
-        if (priceEl) setText(priceEl, '' + item.price);
+        if (priceEl) setText(priceEl, item.price + ' ₺');
       });
     });
   }

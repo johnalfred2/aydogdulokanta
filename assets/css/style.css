@@ -477,12 +477,8 @@ header.scrolled {
 .our-menu .item-wrapper .item-right .price-symbol {
   color: var(--primary-color);
   font-family: "Liberation Serif", "Times New Roman", serif;
-  font-size: 24px;
-}
-
-.our-menu .item-wrapper .item-right .price-symbol {
-  vertical-align: super;
-  font-size: 18px;
+  font-size: 0.8em;
+  margin-left: 2px;
 }
 
 .slider-indicators-wrapper .slide-arrow.prev-arrow,
