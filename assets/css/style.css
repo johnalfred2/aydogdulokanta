@@ -296,11 +296,6 @@ header.scrolled {
   pointer-events: none;
 }
 
-.banner > .container {
-  position: relative;
-  z-index: 2;
-}
-
 .banner-content {
   z-index: 2;
 }
@@ -346,7 +341,7 @@ header.scrolled {
 }
 
 .hero-ctas {
-  margin-top: max(20px, 3vh);
+  margin-top: 8px;
 }
 
 .btn-hero-phone {
