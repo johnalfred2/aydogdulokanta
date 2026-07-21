@@ -129,7 +129,7 @@
     }
   }
 
-  fetch('./data.json')
+  fetch('./data.json', { cache: 'no-cache' })
     .then(function(r) { return r.json(); })
     .then(function(data) {
       if (data.restaurant) renderHero(data.restaurant);
