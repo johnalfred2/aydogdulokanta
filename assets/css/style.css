@@ -672,6 +672,9 @@ header.scrolled {
   font-weight: 700;
   margin-bottom: 24px;
   color: var(--text-color);
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 @media (max-width: 768px) {
   .menu-tabs {
