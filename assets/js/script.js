@@ -114,7 +114,9 @@ document.addEventListener('DOMContentLoaded', () => {
   function setSticky(on) {
     if (on && !isSticky) {
       if (!spacer) createSpacer();
-      spacer.style.height = tabsBar.offsetHeight + 'px';
+      var barHeight = tabsBar.offsetHeight;
+      spacer.style.height = barHeight + 'px';
+      tabsBar.style.minHeight = barHeight + 'px';
       updateHeaderHeight();
       tabsBar.style.top = headerHeight + 'px';
       var rect = tabsBar.getBoundingClientRect();
@@ -124,6 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if (!on && isSticky) {
       isSticky = false;
       tabsBar.classList.remove('is-sticky');
+      tabsBar.style.minHeight = '';
       if (spacer) spacer.style.height = '0';
       justUnstuck = true;
       setTimeout(function() { justUnstuck = false; }, 200);
