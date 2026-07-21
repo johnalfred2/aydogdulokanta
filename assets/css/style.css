@@ -361,6 +361,7 @@ header.scrolled {
   border: 2px solid rgba(255,255,255,0.3);
   transition: all 0.3s ease;
   background: transparent;
+  box-sizing: border-box;
 }
 
 .btn-hero-phone:hover {
@@ -406,7 +407,6 @@ header.scrolled {
   background-color: var(--primary-color);
   width: 200px;
   text-align: center;
-  margin: 10px 0px;
   border-radius: 50px;
   position: relative;
   display: inline-block;
