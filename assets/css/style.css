@@ -300,17 +300,12 @@ header.scrolled {
 .banner > .container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   min-height: 100vh;
-}
-
-.banner > .container > .row {
-  flex: 1;
 }
 
 .banner-content {
   z-index: 2;
-  display: flex;
-  flex-direction: column;
 }
 
 .banner-content h1 {
@@ -354,8 +349,7 @@ header.scrolled {
 }
 
 .hero-ctas {
-  margin-top: auto;
-  margin-bottom: auto;
+  margin-top: max(20px, 3vh);
 }
 
 .btn-hero-phone {
