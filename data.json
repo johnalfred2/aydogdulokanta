@@ -1,7 +1,7 @@
 {
   "restaurant": {
     "name": "AYDOĞDU LOKANTASI",
-    "sinceBadge": "1990'dan Beri",
+    "sinceBadge": "1987'dan Beri",
     "tagline": "Bostancı'nın Geleneksel Lezzet Durağı",
     "description": "1990'dan beri Bostancı Oto Sanayi'de taze günlük malzemelerle hazırladığımız ev yemekleri, döner çeşitleri ve yöresel tatlılarımızla hizmetinizdeyiz.",
     "ctaMenu": "Menüyü Keşfet",
@@ -235,9 +235,9 @@
     "address": "Huzur Hoca Caddesi No:76, İçerenköy, Ataşehir / İstanbul 34752",
     "mapsUrl": "https://maps.app.goo.gl/VTeGeL5wVci3rUmo6",
     "phone": "+90 (555) 123 45 67",
-    "twitter": "",
+    "instagram": "https://www.instagram.com/aydogdulokantasi",
     "facebook": "",
-    "instagram": "https://www.instagram.com/aydogdulokantasi"
+    "twitter": ""
   },
   "footer": {
     "about": "AYDOĞDU LOKANTASI, 1990 yılından bu yana Bostancı Oto Sanayi, Ataşehir'de geleneksel esnaf lokantası olarak hizmet vermektedir. Ev yemekleri, döner çeşitleri, yöresel tatlar ve güler yüzlü servis anlayışımızla sizleri ağırlamaktan mutluluk duyarız."
