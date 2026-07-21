@@ -4,49 +4,68 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CMS - AYDOĞDU LOKANTASI</title>
+  <style>
+    body { font-family: sans-serif; background: #f5f5f5; margin: 0; }
+    #custom-login { max-width: 400px; margin: 120px auto; background: #fff; padding: 30px; border-radius: 12px; text-align: center; display: none; }
+    #custom-login h2 { margin: 0 0 16px; }
+    #custom-login input { width: 100%; padding: 12px; margin-bottom: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 0.9rem; box-sizing: border-box; }
+    #custom-login button { width: 100%; padding: 12px; background: #8B1A1A; color: #fff; border: none; border-radius: 6px; font-size: 1rem; cursor: pointer; }
+    #custom-login .note { font-size: 0.8rem; color: #888; margin-top: 12px; }
+  </style>
 </head>
 <body>
+  <div id="custom-login">
+    <h2>AYDO\u011eDU CMS</h2>
+    <p>GitHub Token ile giri\u015f yap\u0131n</p>
+    <input type="password" id="token-input" placeholder="github_pat_...">
+    <button onclick="saveAndGo()">Giri\u015f Yap</button>
+    <p class="note">Token bir kereye mahsus istenir, taray\u0131c\u0131da saklan\u0131r.</p>
+  </div>
+
   <script>
-    (function() {
-      var STORAGE_KEY = 'aydogdu-cms-token';
-      var token = localStorage.getItem(STORAGE_KEY);
+    var STORAGE_KEY = 'aydogdu-cms-token';
+    var token = localStorage.getItem(STORAGE_KEY);
 
-      if (!token) {
-        var t = prompt('GitHub Personal Access Token\u0131n\u0131z\u0131 girin (bir kereye mahsus):');
-        if (t && t.trim()) {
-          localStorage.setItem(STORAGE_KEY, t.trim());
-          window.location.reload();
-        } else {
-          document.body.innerHTML = '<div style="max-width:400px;margin:120px auto;text-align:center;font-family:sans-serif;padding:30px;"><h2>Token gerekli</h2><p>Sayfay\u0131 yenileyip GitHub Personal Access Token\u0131n\u0131z\u0131 girin.</p></div>';
-        }
-        return;
+    if (!token) {
+      document.getElementById('custom-login').style.display = 'block';
+    }
+
+    window.saveAndGo = function() {
+      var t = document.getElementById('token-input').value.trim();
+      if (t) {
+        localStorage.setItem(STORAGE_KEY, t);
+        window.location.reload();
       }
+    };
 
+    if (token) {
+      // Patch fetch IMMEDIATELY, before Decap CMS loads
       var origFetch = window.fetch;
       window.fetch = function(url, opts) {
-        // Intercept OAuth token exchange — return PAT directly
-        if (typeof url === 'string' && url.indexOf('github.com/login/oauth/access_token') !== -1) {
-          return Promise.resolve(new Response(JSON.stringify({
-            access_token: token,
-            token_type: 'bearer',
-            scope: 'repo,user'
-          }), { status: 200, headers: { 'Content-Type': 'application/json' } }));
-        }
-        // Add token to all GitHub API calls
-        if (typeof url === 'string' && url.indexOf('api.github.com') !== -1) {
-          opts = opts || {};
-          var h = opts.headers || {};
-          if (h instanceof Headers) {
-            h.set('Authorization', 'Bearer ' + token);
-          } else {
-            h['Authorization'] = 'Bearer ' + token;
+        if (typeof url === 'string') {
+          // Intercept token exchange — return PAT directly
+          if (url.indexOf('/oauth/access_token') !== -1 || url.indexOf('/login/oauth/access_token') !== -1) {
+            return Promise.resolve(new Response(JSON.stringify({
+              access_token: token, token_type: 'bearer', scope: 'repo,user'
+            }), { status: 200, headers: { 'Content-Type': 'application/json' } }));
           }
-          opts.headers = h;
+          // Add Authorization to all GitHub API calls
+          if (url.indexOf('api.github.com') !== -1) {
+            opts = opts || {};
+            var h = opts.headers || {};
+            if (!(h instanceof Headers)) h = new Headers(h);
+            if (!h.has('Authorization')) h.set('Authorization', 'Bearer ' + token);
+            opts.headers = h;
+          }
         }
         return origFetch.call(this, url, opts);
       };
-    })();
+
+      // Load Decap CMS
+      var script = document.createElement('script');
+      script.src = 'https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js';
+      document.body.appendChild(script);
+    }
   </script>
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </body>
 </html>
