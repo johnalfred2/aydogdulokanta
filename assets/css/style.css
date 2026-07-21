@@ -343,7 +343,7 @@ header.scrolled {
 }
 
 .hero-ctas {
-  margin-top: 8px;
+  margin-top: max(8px, 5vh);
 }
 
 .btn-hero-phone {
