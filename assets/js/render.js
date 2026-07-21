@@ -36,15 +36,30 @@
   function renderHours(hours) {
     if (!hours) return;
 
+    var groups = [];
+    var currentGroup = null;
+    hours.forEach(function(h) {
+      if (!currentGroup || currentGroup.hours !== h.hours) {
+        currentGroup = { days: [], hours: h.hours };
+        groups.push(currentGroup);
+      }
+      currentGroup.days.push(h.day);
+    });
+
+    function label(group) {
+      if (group.days.length === 1) return group.days[0];
+      return group.days[0] + '\u2013' + group.days[group.days.length - 1];
+    }
+
     var container = document.querySelector('.reservation-date-time');
     if (container) {
       container.innerHTML = '';
-      hours.forEach(function(h) {
+      groups.forEach(function(g) {
         var p = document.createElement('p');
         var b = document.createElement('b');
-        b.textContent = h.day;
+        b.textContent = label(g);
         p.appendChild(b);
-        p.appendChild(document.createTextNode(' ' + h.hours));
+        p.appendChild(document.createTextNode(' ' + g.hours));
         container.appendChild(p);
       });
     }
@@ -52,9 +67,9 @@
     var contactHours = document.querySelector('.contact-hours-list');
     if (contactHours) {
       contactHours.innerHTML = '';
-      hours.forEach(function(h) {
-        contactHours.appendChild(document.createTextNode(h.day + ': ' + h.hours));
-        contactHours.appendChild(document.createElement('br'));
+      groups.forEach(function(g, i) {
+        if (i > 0) contactHours.appendChild(document.createElement('br'));
+        contactHours.appendChild(document.createTextNode(label(g) + ': ' + g.hours));
       });
     }
   }
