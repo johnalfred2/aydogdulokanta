@@ -271,7 +271,7 @@ header.scrolled {
   background: linear-gradient(160deg, #5C0E0E 0%, #8B1A1A 50%, #6B1010 100%);
   width: 100%;
   position: relative;
-  min-height: 60vh;
+  min-height: 70vh;
   overflow: hidden;
 }
 
@@ -349,7 +349,7 @@ header.scrolled {
 @media (max-width: 767.98px) {
   .banner {
     padding: 0 !important;
-  min-height: 60vh;
+  min-height: 70vh;
   }
   .banner > .container {
     padding-top: 6rem !important;
