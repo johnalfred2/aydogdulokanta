@@ -15,7 +15,7 @@
       "id": "corbalar",
       "name": "Çorbalar",
       "icon": "fa-bowl-food",
-      "image": "./corba.jpg",
+      "image": "./ana_yemek.jpg",
       "items": [
         {
           "name": "Mercimek Çorbası",
@@ -91,7 +91,7 @@
       "id": "doner",
       "name": "Döner Çeşitleri",
       "icon": "fa-utensils",
-      "image": "./doner.jpg",
+      "image": "./ana_yemek.jpg",
       "items": [
         {
           "name": "Döner Porsiyon",
@@ -129,7 +129,7 @@
       "id": "tatlilar",
       "name": "Tatlılar",
       "icon": "fa-ice-cream",
-      "image": "./tatli.jpg",
+      "image": "./ana_yemek.jpg",
       "items": [
         {
           "name": "Künefe",
@@ -167,7 +167,7 @@
       "id": "icecekler",
       "name": "İçecekler",
       "icon": "fa-glass-water",
-      "image": "./tatli.jpg",
+      "image": "./ana_yemek.jpg",
       "items": [
         {
           "name": "Ayran",
