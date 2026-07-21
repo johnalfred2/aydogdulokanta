@@ -1,3 +1,8 @@
+/*
+  Original template: Restoran (https://github.com/codewithshabbir/restoran)
+  Heavily customized and extended for AYDOĞDU LOKANTASI.
+*/
+
 AOS.init({
   offset: '140', // 50% viewport height ka offset
 });

@@ -143,6 +143,8 @@ Edit `admin/config.yml` to add or modify fields. Each field in the CMS maps to a
 
 ---
 
-## License
+## License & Credits
 
 All rights reserved. © AYDOĞDU LOKANTASI.
+
+**Original template:** [Restoran](https://github.com/codewithshabbir/restoran) by codewithshabbir — heavily customized and extended.

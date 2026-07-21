@@ -1,3 +1,8 @@
+/*
+  Original template: Restoran (https://github.com/codewithshabbir/restoran)
+  Heavily customized and extended for AYDOĞDU LOKANTASI.
+*/
+
 (function() {
   'use strict';
 
