@@ -346,35 +346,10 @@ header.scrolled {
   margin-top: 8px;
 }
 
-.btn-hero-phone {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 200px;
-  padding: 14px 24px;
-  border-radius: 50px;
-  font-family: "Inter", sans-serif;
-  font-weight: 600;
-  font-size: 0.95rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: #fff !important;
-  text-decoration: none;
-  border: 2px solid rgba(255,255,255,0.3);
-  transition: all 0.3s ease;
-  background: transparent;
-  box-sizing: border-box;
-}
-
-.btn-hero-phone:hover {
-  background: rgba(255,255,255,0.1);
-  border-color: rgba(255,255,255,0.6);
-  color: #fff !important;
-}
-
 @media (max-width: 767.98px) {
   .banner {
     padding: 0 !important;
+    min-height: 80vh;
   }
   .banner > .container {
     padding-top: 6rem !important;
@@ -404,7 +379,6 @@ header.scrolled {
 
 .book-a-table {
   background-color: var(--primary-color);
-  width: 200px;
   text-align: center;
   border-radius: 50px;
   position: relative;
@@ -739,7 +713,7 @@ header.scrolled {
   position: fixed;
   bottom: 20px;  
   right: 20px;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   width: 50px;

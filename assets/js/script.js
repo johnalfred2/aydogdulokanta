@@ -209,6 +209,21 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 })();
 
+var backToTop = document.getElementById('back-to-top');
+var bttTicking = false;
+window.addEventListener('scroll', function() {
+  if (bttTicking) return;
+  bttTicking = true;
+  requestAnimationFrame(function() {
+    if (window.scrollY > 300) {
+      backToTop.style.display = 'flex';
+    } else {
+      backToTop.style.display = 'none';
+    }
+    bttTicking = false;
+  });
+});
+
 document.getElementById('copyrightCurrentYear').textContent = new Date().getFullYear();
 
 
