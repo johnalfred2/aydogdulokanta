@@ -3,19 +3,9 @@
   Heavily customized and extended for AYDOĞDU LOKANTASI.
 */
 
-AOS.init({
-  offset: '140', // 50% viewport height ka offset
-});
 document.addEventListener("DOMContentLoaded", function() {
   const loader = document.querySelector('.loader');
-  const loaderText = document.querySelector('.loader-text');
-  let dotCount = 0;
-  const dotInterval = setInterval(function() {
-    dotCount = (dotCount + 1) % 4;
-    loaderText.textContent = 'Yükleniyor' + '.'.repeat(dotCount);
-  }, 400);
   setTimeout(function() {
-    clearInterval(dotInterval);
     loader.style.opacity = '0';
     loader.style.display = 'none';
   }, 3000);

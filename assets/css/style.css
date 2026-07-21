@@ -141,12 +141,23 @@ body::-webkit-scrollbar-thumb {
   margin-bottom: 24px;
 }
 
-.loader-text {
-  font-family: "Inter", sans-serif;
-  font-size: 1rem;
-  color: var(--text-color);
-  min-width: 100px;
-  text-align: center;
+.loader-dots span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 4px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  animation: dot-bounce 1.4s infinite ease-in-out both;
+}
+
+.loader-dots span:nth-child(1) { animation-delay: -0.32s; }
+.loader-dots span:nth-child(2) { animation-delay: -0.16s; }
+.loader-dots span:nth-child(3) { animation-delay: 0s; }
+
+@keyframes dot-bounce {
+  0%, 80%, 100% { transform: scale(0); }
+  40% { transform: scale(1); }
 }
 
 /* Header Start */
