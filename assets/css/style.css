@@ -476,7 +476,7 @@ header.scrolled {
 .our-menu .item-wrapper .item-right .item-price {
   color: var(--primary-color);
   font-family: "Liberation Serif", "Times New Roman", serif;
-  font-size: clamp(22px, 3.5vw, 34px);
+  font-size: clamp(22px, 2.5vw, 28px);
 }
 
 .our-menu .item-wrapper .item-right .price-symbol {
