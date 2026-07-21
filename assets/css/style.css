@@ -271,7 +271,7 @@ header.scrolled {
   background: linear-gradient(160deg, #5C0E0E 0%, #8B1A1A 50%, #6B1010 100%);
   width: 100%;
   position: relative;
-  min-height: 85vh;
+  min-height: 70vh;
   overflow: hidden;
 }
 
