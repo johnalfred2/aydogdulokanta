@@ -164,6 +164,11 @@ header.scrolled {
   transition: 0.3s all linear;
 }
 
+header .container {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
 .logo h1 {
   font-size: 2.5rem;
   color: var(--text-color-white);
