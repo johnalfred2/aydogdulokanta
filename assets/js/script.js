@@ -92,11 +92,8 @@ document.addEventListener('DOMContentLoaded', () => {
   var menuSection = document.getElementById('menu');
   if (!tabsBar || !tabs.length || !categories.length || !menuSection) return;
 
-  var spacer = null;
-  var isSticky = false;
   var ticking = false;
-  var naturalAbsTop = 0;
-  var headerHeight = 66; // dynamic, updated on stick/resize
+  var headerHeight = 66;
   var justClicked = false;
 
   function updateHeaderHeight() {
@@ -104,56 +101,19 @@ document.addEventListener('DOMContentLoaded', () => {
     if (h) headerHeight = h.getBoundingClientRect().bottom;
   }
   updateHeaderHeight();
-
-  function setSticky(on) {
-    if (on && !isSticky) {
-      // Create spacer BEFORE removing bar from flow — no jump
-      if (!spacer) {
-        spacer = document.createElement('div');
-        spacer.className = 'menu-spacer';
-        tabsBar.parentNode.insertBefore(spacer, tabsBar.nextSibling);
-      }
-      spacer.style.height = tabsBar.offsetHeight + 'px';
-      spacer.style.display = 'block';
-      spacer.offsetHeight; // force reflow so spacer is rendered
-
-      updateHeaderHeight();
-      tabsBar.style.top = headerHeight + 'px';
-      var rect = tabsBar.getBoundingClientRect();
-      naturalAbsTop = rect.top + window.pageYOffset;
-      // On mobile, keep the bar at its natural width and position
-      if (window.innerWidth <= 768) {
-        tabsBar.style.left = rect.left + 'px';
-        tabsBar.style.width = rect.width + 'px';
-      } else {
-        tabsBar.style.left = '';
-        tabsBar.style.width = '';
-      }
-      isSticky = true;
-      tabsBar.classList.add('is-sticky');
-    } else if (!on && isSticky) {
-      isSticky = false;
-      tabsBar.classList.remove('is-sticky');
-      tabsBar.style.left = '';
-      tabsBar.style.width = '';
-      if (spacer) spacer.style.display = 'none';
-    }
-  }
+  tabsBar.style.top = headerHeight + 'px';
 
   window.addEventListener('scroll', function() {
     if (ticking) return;
     ticking = true;
     requestAnimationFrame(function() {
-      var menuBottom = menuSection.offsetTop + menuSection.offsetHeight;
+      updateHeaderHeight();
+      tabsBar.style.top = headerHeight + 'px';
 
-      if (!isSticky) {
-        if (tabsBar.getBoundingClientRect().top <= headerHeight && window.scrollY > 200 && window.scrollY < menuBottom - 300) {
-          setSticky(true);
-        }
+      if (tabsBar.getBoundingClientRect().top <= headerHeight + 1) {
+        tabsBar.classList.add('is-sticky');
       } else {
-          if (window.scrollY >= menuBottom - 260 || window.scrollY + 84 < naturalAbsTop - 50) {
-          setSticky(false);
-        }
+        tabsBar.classList.remove('is-sticky');
       }
 
       var activeOffset = headerHeight + (tabsBar.offsetHeight || 50) + 25;
@@ -178,21 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('resize', function() {
     updateHeaderHeight();
-    if (isSticky) {
-      tabsBar.style.top = headerHeight + 'px';
-      if (window.innerWidth <= 768) {
-        var parent = tabsBar.parentElement;
-        var pRect = parent.getBoundingClientRect();
-        var cs = getComputedStyle(parent);
-        var pl = parseFloat(cs.paddingLeft);
-        var pr = parseFloat(cs.paddingRight);
-        tabsBar.style.left = (pRect.left + pl) + 'px';
-        tabsBar.style.width = (pRect.width - pl - pr) + 'px';
-      } else {
-        tabsBar.style.left = '';
-        tabsBar.style.width = '';
-      }
-    }
+    tabsBar.style.top = headerHeight + 'px';
   });
 
   // Smooth scroll on click
