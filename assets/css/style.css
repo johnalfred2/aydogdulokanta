@@ -271,7 +271,6 @@ header.scrolled {
   background: linear-gradient(160deg, #5C0E0E 0%, #8B1A1A 50%, #6B1010 100%);
   width: 100%;
   position: relative;
-  min-height: 100vh;
   overflow: hidden;
 }
 
@@ -298,10 +297,8 @@ header.scrolled {
 }
 
 .banner > .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 100vh;
+  position: relative;
+  z-index: 2;
 }
 
 .banner-content {
