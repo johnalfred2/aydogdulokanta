@@ -655,6 +655,12 @@ header.scrolled {
     border-color: var(--border-color);
   }
 }
+
+.menu-tabs .menu-tab.active {
+  background: var(--primary-color);
+  color: var(--text-color-white);
+  border-color: var(--primary-color);
+}
 .menu-category-title {
   font-family: "Liberation Serif", "Times New Roman", serif;
   font-size: 1.8rem;

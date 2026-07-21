@@ -199,7 +199,6 @@ document.addEventListener('DOMContentLoaded', () => {
   tabs.forEach(function(tab) {
     tab.addEventListener('click', function(e) {
       e.preventDefault();
-      this.blur();
       justClicked = true;
       setTimeout(function() { justClicked = false; }, 1000);
       tabs.forEach(function(t) { t.classList.remove('active'); });
