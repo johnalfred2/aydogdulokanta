@@ -473,11 +473,14 @@ header.scrolled {
   margin-bottom: 0;
 }
 
-.our-menu .item-wrapper .item-right .item-price,
-.our-menu .item-wrapper .item-right .price-symbol {
+.our-menu .item-wrapper .item-right .item-price {
   color: var(--primary-color);
   font-family: "Liberation Serif", "Times New Roman", serif;
-  font-size: 0.8em;
+  font-size: 24px;
+}
+
+.our-menu .item-wrapper .item-right .price-symbol {
+  font-size: 0.75em;
   margin-left: 2px;
 }
 
