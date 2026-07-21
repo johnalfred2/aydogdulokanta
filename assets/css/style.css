@@ -550,8 +550,8 @@ header.scrolled {
 }
 
 .menu-category-title .menu-icon {
-  width: 22px;
-  height: 22px;
+  height: 1em;
+  width: auto;
 }
 
 .menu-icon svg {
