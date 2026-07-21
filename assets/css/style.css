@@ -32,6 +32,10 @@ body {
   color: var(--text-color);
 }
 
+.site-wrapper {
+  overflow-x: hidden;
+}
+
 
 
 h1,
